@@ -39,7 +39,6 @@ Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
 Echo ----------------------------------------------------------
 set /p aminmodvar=Modordner:
 set moddir=D:\Assetti\%aminmodvar%
-pause
 goto inject
 
 :nwbeginning
