@@ -1,5 +1,5 @@
 @echo off
-Echo	----------------------------------------------------------------------------------
+Echo ----------------------------------------------------------------------------------
 Echo Das hier ist ein kleines Programm zum erstellen von Hard-Links in Windows.
 Echo Mit Hard-Links koennen zum Beispiel Assetto Corsa Mods in einem anderen Directory
 Echo installiert werden. Dieses Programm vereinfacht diesen Vorgang fuer AC.
@@ -29,8 +29,21 @@ Echo Bitte setzen Sie dann Ihren Assetto Corsa Parent Folder.
 Echo ----------------------------------------------------------
 set /p mnfldr=Parent Folder Directory:
 
-:nwbeginning
+:amin
+cls 
+Echo Sind Sie Amin?
+set /p aminvar=(J)a / (N)ein?
+if %aminvar == N goto nwbeginning
+cls
+Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
+Echo ----------------------------------------------------------
+set /p aminmodvar=Modordner:
+set moddir=D:\Assetti\%aminmodvar%
+Echo mnfldr
+pause
+goto inject
 
+:nwbeginning
 cls
 Echo Bitte setzen Sie nun Ihren gewuenschten Mod-Ordner.
 Echo Nehmen Sie dazu die gewuenschte Mod SELBST als DIR, nicht Ihren Main-Mod-Ordner.
@@ -38,6 +51,7 @@ Echo Tun Sie dies nicht, wird die Mod nicht in Assetto Corsa erscheinen.
 Echo --------------------------------------------------------------------------------
 set /p moddir=Mod-Ordner Directory:
 
+:inject
 cls
 Echo Wie soll die Mod genannt werden?
 Echo --------------------------------
