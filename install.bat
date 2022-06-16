@@ -21,7 +21,7 @@ goto askfordir
 
 :stndrdDIR
 set mnfldr=C:\Program Files (x86)\Steam\steamapps\common\assettocorsa
-goto nwbeginning
+goto amin
 
 :setmanual
 cls
@@ -39,7 +39,6 @@ Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
 Echo ----------------------------------------------------------
 set /p aminmodvar=Modordner:
 set moddir=D:\Assetti\%aminmodvar%
-Echo mnfldr
 pause
 goto inject
 
@@ -69,7 +68,6 @@ exit
 :car
 cls
 Echo Sie injektieren nun ein Fahrzeug in Ihre Assetto Corsa - Installation.
-Echo %mnfldr%
 Echo ----------------------------------------------------------------------
 pause
 mklink /J "%mnfldr%\content\cars\%modname%" "%moddir%"
