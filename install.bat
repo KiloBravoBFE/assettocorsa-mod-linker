@@ -33,7 +33,8 @@ set /p mnfldr=Parent Folder Directory:
 cls 
 Echo Sind Sie Amin?
 set /p aminvar=(J)a / (N)ein?
-if %aminvar == N goto nwbeginning
+if %aminvar% == N goto nwbeginning
+:aminconfirm
 cls
 Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
 Echo ----------------------------------------------------------
@@ -85,9 +86,19 @@ mklink /J "%mnfldr%\content\tracks\%modname%" "%moddir%"
 Echo ---------------------------------------------------------------------
 Echo Moechten Sie noch eine Mod injektieren?
 Echo ---------------------------------------------------------------------
+if %aminvar% == J goto jumperweilbindumm
 set /p inpt=(J)a / (N)ein?
 if %inpt% == J goto nwbeginning
 if %inpt% == N exit
+pause
+exit
+
+:jumperweilbindumm
+set /p inpt=(J)a / (N)ein?
+if %inpt% == J goto aminconfirm
+if %inpt% == N exit
+pause
+exit
 
 
 
