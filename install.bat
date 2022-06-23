@@ -39,7 +39,7 @@ cls
 Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
 Echo ----------------------------------------------------------
 set /p aminmodvar=Modordner:
-set moddir=D:\Assetti\%aminmodvar%
+set moddir=E:\assetti mods\%aminmodvar%
 goto inject
 
 :nwbeginning
