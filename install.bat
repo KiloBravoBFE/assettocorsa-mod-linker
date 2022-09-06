@@ -1,21 +1,35 @@
 @echo off
+Echo MK-Linker fuer:
+Echo
+Echo
+Echo   |||||||||||||||||||||||         |||||||||||||||||||
+Echo   ||||||           ||||||         |||||
+Echo   |||||             |||||         |||||
+Echo   |||||||||||||||||||||||         |||||
+Echo   |||||||||||||||||||||||         |||||
+Echo   |||||             |||||         |||||
+Echo   |||||             |||||         |||||
+Echo   |||||             |||||         |||||
+Echo   |||||             |||||setto    |||||||||||||||||||orsa
+Echo
+Echo
 Echo ----------------------------------------------------------------------------------
 Echo Das hier ist ein kleines Programm zum erstellen von Hard-Links in Windows.
 Echo Mit Hard-Links koennen zum Beispiel Assetto Corsa Mods in einem anderen Directory
-Echo installiert werden. Dieses Programm vereinfacht diesen Vorgang fuer AC.
+Echo installiert werden. Dieses Programm vereinfacht diesen Vorgang *NUR* fuer AC.
 Echo ----------------------------------------------------------------------------------
 pause
 
 :askfordir
 cls 
-Echo Befindet sich Ihr Assettocorsa Parent Folder im Standardverzeichnis,
+Echo Befindet sich deine Assettocorsa Parent Folder im Standardverzeichnis,
 Echo d.h. C:\Program Files\Steam?
 Echo --------------------------------------------------------------------
 set /p inptDirTF=(J)a / (N)ein?
 if %inptDirTF% == J goto stndrdDIR
 if %inptDirTF% == N goto setmanual
 cls
-Echo Fehler - geben Sie einen gueltigen Buchstaben ein: "J" oder "N".
+Echo Fehler - gib einen gueltigen Buchstaben ein: "J" oder "N".
 pause
 goto askfordir
 
@@ -25,18 +39,18 @@ goto amin
 
 :setmanual
 cls
-Echo Bitte setzen Sie dann Ihren Assetto Corsa Parent Folder.
+Echo Bitte setze dann hier deinen Asetto Corsa Parent Folder.
 Echo ----------------------------------------------------------
 set /p mnfldr=Parent Folder Directory:
 
 :amin
 cls 
-Echo Sind Sie Amin?
+Echo Bist du Amin (faster 'then' you) ?
 set /p aminvar=(J)a / (N)ein?
 if %aminvar% == N goto nwbeginning
 :aminconfirm
 cls
-Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heißt?
+Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heisst?
 Echo ----------------------------------------------------------
 set /p aminmodvar=Modordner:
 set moddir=E:\assetti mods\%aminmodvar%
@@ -44,22 +58,22 @@ goto inject
 
 :nwbeginning
 cls
-Echo Bitte setzen Sie nun Ihren gewuenschten Mod-Ordner.
-Echo Nehmen Sie dazu die gewuenschte Mod SELBST als DIR, nicht Ihren Main-Mod-Ordner.
-Echo Tun Sie dies nicht, wird die Mod nicht in Assetto Corsa erscheinen.
+Echo Bitte setze nun den gewuenschten Mod-Ordner.
+Echo NNimm dazu die gewuenschte Mod SELBST als DIR, nicht den Main-Mod-Ordner.
+Echo Tust du dies nicht, wird die Mod *nicht in Assetto Corsa erscheinen*.
 Echo --------------------------------------------------------------------------------
 set /p moddir=Mod-Ordner Directory:
 
 :inject
 cls
-Echo Wie soll die Mod genannt werden?
-Echo --------------------------------
+Echo Wie soll die Mod im Ordner genannt werden?
+Echo -------------------------------------------
 set /p modname=Namen eingeben:
 
 cls
-Echo moechten Sie eine Strecke oder ein Auto installieren?
+Echo moechtest du eine Strecke oder ein Auto installieren?
 Echo ----------------------------------------------------
-set /p lnkmode=Geben sie CAR oder MAP ein.
+set /p lnkmode=Gib CAR oder MAP ein.
 if %lnkmode% == CAR goto car
 if %lnkmode% == MAP goto map
 pause
@@ -67,12 +81,12 @@ exit
 
 :car
 cls
-Echo Sie injektieren nun ein Fahrzeug in Ihre Assetto Corsa - Installation.
+Echo Du linkst nun ein Fahrzeug in deine Assetto Corsa - Installation.
 Echo ----------------------------------------------------------------------
 pause
 mklink /J "%mnfldr%\content\cars\%modname%" "%moddir%"
 Echo ---------------------------------------------------------------------
-Echo Moechten Sie noch eine Mod injektieren?
+Echo Moechtest du noch eine Mod linken?
 Echo ---------------------------------------------------------------------
 set /p inpt=(J)a / (N)ein?
 if %inpt% == J goto nwbeginning
@@ -80,11 +94,11 @@ if %inpt% == N exit
 
 :map
 cls 
-Echo Sie injektieren nun eine Strecke in Ihre Assetto Corsa - Installation.
+Echo Du linkst nun eine Strecke in deine Assetto Corsa - Installation.
 Echo ----------------------------------------------------------------------
 mklink /J "%mnfldr%\content\tracks\%modname%" "%moddir%"
 Echo ---------------------------------------------------------------------
-Echo Moechten Sie noch eine Mod injektieren?
+Echo Moechtest du noch eine Mod linken?
 Echo ---------------------------------------------------------------------
 if %aminvar% == J goto jumperweilbindumm
 set /p inpt=(J)a / (N)ein?
@@ -98,22 +112,5 @@ set /p inpt=(J)a / (N)ein?
 if %inpt% == J goto aminconfirm
 if %inpt% == N exit
 pause
+
 exit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
