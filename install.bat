@@ -10,7 +10,7 @@ Echo   |||||||||||||||||||||||         |||||
 Echo   |||||             |||||         |||||
 Echo   |||||             |||||         |||||
 Echo   |||||             |||||         |||||
-Echo   |||||             |||||setto    |||||||||||||||||||orsa
+Echo   |||||             |||||ssetto   |||||||||||||||||||orsa
 Echo
 Echo
 Echo ----------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ pause
 
 :askfordir
 cls 
-Echo Befindet sich deine Assettocorsa Parent Folder im Standardverzeichnis,
+Echo Befindet sich dein Assettocorsa Parent Folder im Standardverzeichnis,
 Echo d.h. C:\Program Files\Steam?
 Echo --------------------------------------------------------------------
 set /p inptDirTF=(J)a / (N)ein?
@@ -51,7 +51,7 @@ if %aminvar% == N goto nwbeginning
 :aminconfirm
 cls
 Echo Hallo, Amin! Sagst du mir wie der Ordner deiner Mod heisst?
-Echo ----------------------------------------------------------
+Echo ------------------------------------------------------------
 set /p aminmodvar=Modordner:
 set moddir=E:\assetti mods\%aminmodvar%
 goto inject

@@ -10,12 +10,12 @@ Echo   |||||||||||||||||||||||         |||||
 Echo   |||||             |||||         |||||
 Echo   |||||             |||||         |||||
 Echo   |||||             |||||         |||||
-Echo   |||||             |||||setto    |||||||||||||||||||orsa
+Echo   |||||             |||||ssetto   |||||||||||||||||||orsa
 Echo
 Echo
 Echo ---------------------------------------------------------------
 Echo Das hier ist ein kleines Script, mit dem vorhandene
-Echo Direcory Hard Junctions einfach wieder geloest werden koennen.
+Echo Directory Hard Junctions einfach wieder geloest werden koennen.
 Echo ---------------------------------------------------------------
 pause
 
@@ -29,7 +29,7 @@ if %inptAC% == J goto assetto
 :manual
 cls
 Echo -----------------------------------------------------------------
-Echo Bitte gib den Ordner an, in den die Juction geht.
+Echo Bitte gib den Ordner an, in den die Junction geht.
 Echo Im Fall von Assetto Corsa Mods waere das der "Shortcut",
 Echo welcher im AC-Ordner die Verknuepfung zum Modordner darstellt.
 Echo Diesen "Ordner" gib nun bitte an.
@@ -115,7 +115,7 @@ Echo Welcher Teil stimmt nicht?
 Echo 1: Assetto-Pfad
 Echo 2: Car / Track
 Echo 3: Modname
-Echo 4: Stop; manuelle Eingabe erwuenscht
+Echo 4: Stop; stattdessen manuelle Eingabe
 Echo ------------------------------------------------
 set /p redovar=Wahl:
 if redovar == 1 goto assetto
